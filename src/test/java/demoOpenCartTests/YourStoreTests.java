@@ -23,15 +23,17 @@ public class YourStoreTests extends BaseTest {
                 .clickOnContinueButton()
                 .getSuccessText();
 
-        Assertions.assertThat(actualResultText).as("Expected text " + expectedResultMessage + " not exist on the Page")
+        Assertions.assertThat(actualResultText)
+                .as("Expected text " + expectedResultMessage + " not exist on the Page")
                 .isEqualTo(expectedResultMessage);
     }
 
     @Test(priority = 2)
     public void warningFirstNameTest() {
+        String expectedResultWarningMessageText = "First Name must be between 1 and 32 characters!";
 
         MainPage mainPage = new MainPage();
-        mainPage.clickOnMyAccountButton()
+        String actualUnSuccessText = mainPage.clickOnMyAccountButton()
                 .clickOnRegisterSubMenuButton()
                 .enterLastNameField("Golovco")
                 .enterMailField("NataGolovco+5@ua.com")
@@ -40,24 +42,34 @@ public class YourStoreTests extends BaseTest {
                 .enterConfirm("Asdfghjkl;'")
                 .clickOnPrivacyPolicyButton()
                 .clickOnContinueButton()
-                .elementWarningMessage("First Name must be between 1 and 32 characters!");//A mistake?
+                .getUnSuccessText();
 
-        /*Assertions.assertThat().as("Expected text " + expectedWarningMessage + " not exist on the Page")
-                .isEqualTo(expectedWarningMessage);*/
+        Assertions.assertThat(actualUnSuccessText)
+                .as("Expected text " + expectedResultWarningMessageText + " not exist on the Page")
+                .isEqualTo(expectedResultWarningMessageText);
     }
 
     @Test(priority = 3)
     public void checkAppearanceMyAccountMenuOnTheLeftSideTest() {
+        String expectedMyAccountOnTheLeftSideText = "My Account";
+
         MainPage mainPage = new MainPage();
-        mainPage.clickOnMyAccountButton()
+        String actualMyAccountOnTheLeftSideText = mainPage.clickOnMyAccountButton()
                 .clickOnLoginSubMenuButton()
                 .inputEmailValue("NataGolovco+5@ua.com")
                 .inputPasswordValue("Asdfghjkl;'")
                 .clickOnLoginButton()
-                .expectedMyAccountText("My Account");//A mistake?
+                .expectedMyAccountText();
 
-        /*Assertions.assertThat().as("Expected text " + expectedMyAccountText + " not exist on the Page")
-                .isEqualTo(expectedMyAccountText);*/
+        Assertions.assertThat(actualMyAccountOnTheLeftSideText)
+                .as("Expected text " + expectedMyAccountOnTheLeftSideText + " not exist on the Page")
+                .isEqualTo(expectedMyAccountOnTheLeftSideText);
+    }
+
+    @Test(priority = 4)
+    public void checkExistingTwoGoodsInWishListTest() {
+
+
     }
 
 }

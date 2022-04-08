@@ -6,9 +6,9 @@ public class MyOwnCabinetPage extends BasePage {
 
     private final By myAccountText = By.xpath("//h2[text()='My Account']");
 
-    public MyOwnCabinetPage expectedMyAccountText(String myAccountString) {
-        getDriver().findElement(myAccountText).getText();
-        return this;
+    public String expectedMyAccountText() {
+        return getDriver().findElement(myAccountText).getText();
+
     }
 }
 /*     //Checking appearance actual My Account Text
