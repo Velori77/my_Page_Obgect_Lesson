@@ -3,7 +3,7 @@ package demoOpenCartTests;
 import blocks.ProductBlock;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
-import pages.CameraPage;
+import pages.CamerasPage;
 import pages.IPhonePage;
 import pages.MainPage;
 import pages.WishListPage;
@@ -134,10 +134,10 @@ public class YourStoreTests extends BaseTest {
     String cannonCamera = "Canon EOS 5D";
     String nikonCamera = "Nikon D300";
 
-    MainPage mainPage = new MainPage();
+    /*MainPage mainPage = new MainPage();
     mainPage.clickCameraMenuButton();
 
-    CameraPage cameraPage = new CameraPage();
+    CamerasPage cameraPage = new CamerasPage();
     Assertions.assertThat(cameraPage.getAllProduct().size()).isEqualTo(2);
 
     ProductBlock cannon = cameraPage.findProduct(cannonCamera);
@@ -145,7 +145,7 @@ public class YourStoreTests extends BaseTest {
 
     Assertions.assertThat(cannon.getNewPrice()).isEqualTo(Double.valueOf(98.00));
     Assertions.assertThat(cannon.getOldPrice()).isEqualTo(Double.valueOf(122.00));
-    Assertions.assertThat(nikon.getExRatePrice()).isEqualTo(Double.valueOf(80.00));
+    Assertions.assertThat(nikon.getExRatePrice()).isEqualTo(Double.valueOf(80.00));*/
 
   }
 

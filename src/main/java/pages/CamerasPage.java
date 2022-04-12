@@ -7,8 +7,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class CameraPage extends BasePage {
-  private final By product = By.cssSelector(".product-thumb");
+public class CamerasPage extends BasePage {
+  /*private final By product = By.cssSelector(".product-thumb");
 
   public List<WebElement> getAllProduct() {
     return findAll(product);
@@ -18,7 +18,6 @@ public class CameraPage extends BasePage {
   }
 
   public ProductBlock findProduct(String productName) {
-    return new ProductBlock(find(By.xpath(format("//img[@alt='%s']/../../..", productName))));
-  }
+    return new ProductBlock(find(By.xpath(format("//img[@alt='%s']/../../..", productName))));*/
 }
 
